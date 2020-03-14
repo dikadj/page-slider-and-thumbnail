@@ -6,7 +6,7 @@ import "./App.scss"
 
 const data = [
   {
-    id: 1,
+    id: 0,
     title: () => (
 			"Judul."
 		),
@@ -34,7 +34,7 @@ const data = [
     img: require("./img/definition.jpg")
   },
   {
-    id: 2,
+    id: 1,
 		title: () => ("Latar belakang."),
     desc: () => (
       <div>
@@ -47,7 +47,7 @@ const data = [
     img: require("./img/latar-belakang.jpg")
   },
 	{
-    id: 3,
+    id: 2,
 		title: () => ("Rumusan masalah."),
     desc: () => (
       <p>
@@ -59,7 +59,7 @@ const data = [
     img: require("./img/puzzles.jpg")
   },
 	{
-    id: 4,
+    id: 3,
 		title: () => ("Tujuan Penelitian."),
     desc: () => (
 			<p className="text-justify">
@@ -77,7 +77,7 @@ const data = [
 ]
 
 const CarouselItem = ({ id, title, desc, img, className }) => (
-  <div id={`halaman${0+id}`} className={className} data-halaman={id}>
+  <div id={`halaman${id+1}`} className={className} data-halaman={id}>
 		<div className="d-block w-100 position-absolute"
 			style={{
 			backgroundImage: "radial-gradient(rgba(0,0,0,0), rgba(0,0,0,.5))",
@@ -108,9 +108,9 @@ const CarouselItem = ({ id, title, desc, img, className }) => (
 const pageAfter = (pages, direction) => {
 	switch (direction.type) {
 		case "prev":
-			return pages.current===1 ? pages.length : pages.current - 1
+			return pages.current===initialPage ? pages.length-1 : pages.current - 1
 		case "next":
-			return pages.current===pages.length ? 1 : pages.current + 1
+			return pages.current===pages.length-1 ? initialPage : pages.current + 1
 		default:
 			return pages.current
 	}
@@ -223,7 +223,7 @@ const ThumbnailPresentation = ({ onClickClose, onClickThumbnail, currentPage }) 
 // }
 
 
-let initialPage = 1
+const initialPage = 0
 
 class App extends Component {
 	constructor(props) {
@@ -271,26 +271,30 @@ class App extends Component {
 	componentDidUpdate() {
 		console.log(this.state)
 		// go to page of selection
-		data.map(i => {
-			return i.id !== this.state.page.current ?
-				$(`#halaman${i.id}`).removeClass("active")
-				// console.log(`#halaman${i.id} tidak diklik`)
-				:
-				$(`#halaman${i.id}`).addClass("active")
-				// console.log(document.querySelector(`#halaman${i.id}`))
-		})
-
+		// console.log(("[data-slide-to]"))
 	}
 
   render() {
     return (
       <div>
+				<ol className="carousel-indicators d-none">
+					{
+						data.map(i=>(
+							<li data-target="#carousel" data-slide-to={i.id}
+								className={i.id!==this.state.page.current?"":"active"}
+								onClick={() => {
+									// this.setState({ page: { current: i.id } })
+								}}
+							/>
+						))
+					}
+			  </ol>
 				{
 					this.state.whichPresentation === "thumbnail" ?
 						<ThumbnailPresentation
 							onClickClose = {() => {
 								this.setState({ whichPresentation: "carousel" })
-								console.log(this.state.page.current)
+								// console.log(this.state.page.current)
 							}}
 							onClickThumbnail={(e) => {
 								const clickedThumbnailPage = $(e.currentTarget).data("slide-to")
@@ -302,6 +306,14 @@ class App extends Component {
 								})
 								// click close
 								$("#closeThumbnail").click()
+								// go to page selected
+								const promiseUpdateActiveClass = new Promise((resolve, reject) => {
+									resolve(this.forceUpdate())
+								})
+								promiseUpdateActiveClass.then(() => {
+									$(`ol.carousel-indicators li[data-slide-to="${clickedThumbnailPage}"]`).click()
+									// console.log(clickedThumbnailPage)
+								})
 							}}
 							currentPage={this.state.page.current}
 						/>
@@ -313,7 +325,7 @@ class App extends Component {
 							>
 								<span>
 									<strong style={{ fontSize: "1.25rem" }}>
-										{this.state.page.current<10?"0"+this.state.page.current:this.state.page.current}
+										{(this.state.page.current+1)<10?"0"+(this.state.page.current+1):(this.state.page.current+1)}
 									</strong>
 									<small>
 										/{data.length<10?"0"+data.length:data.length}
@@ -331,13 +343,13 @@ class App extends Component {
 								</button>
 								<button id="prevBtn" className="rounded-circle px-2 pb-1 pt-0 ml-2 carousel-control-left"
 									onClick={()=>{document.querySelector("[data-slide='prev']").click()}}
-									disabled={this.state.page.current===1}
+									disabled={this.state.page.current===initialPage}
 								>
 									<FaChevronLeft />
 								</button>
 								<button id="nextBtn" className="rounded-circle px-2 pb-1 pt-0 ml-2"
 									onClick={()=>{document.querySelector("[data-slide='next']").click()}}
-									disabled={this.state.page.current===data.length}
+									disabled={this.state.page.current===data.length-1}
 								>
 									<FaChevronRight />
 								</button>
@@ -347,18 +359,18 @@ class App extends Component {
 									{
 										data.map(i => (
 											<CarouselItem id={i.id} title={i.title} desc={i.desc} img={i.img}
-												className={`carousel-item ${i.id===1?"active":""}`} />
+												className={`carousel-item ${i.id===initialPage?"active":""}`} />
 										))
 									}
 								</div>
 								{
-									this.state.page.current===1 ?
+									this.state.page.current===initialPage ?
 										(
 											<CarouselControl direction="next" read="Next"
 												onClick={(e)=>{this.handleSlideController(e)}}
 											/>
 										)
-									: this.state.page.current===data.length ?
+									: this.state.page.current===data.length-1 ?
 										(
 											<CarouselControl direction="prev" read="Previous"
 												onClick={(e)=>{this.handleSlideController(e)}}
