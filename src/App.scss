@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Volkhov|Vollkorn&display=swap');
+
+body,
+#app {
+	overflow: hidden;
+
+	#carouselContainer {
+		overflow: hidden;
+	}
+
+	// font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+
+	h1, h2, h3, h4, h5 {
+		// font-family: 'Open Sans', sans-serif;
+		font-family: 'Roboto', sans-serif;
+		font-weight: bold;
+	}
+
+	#pageIndicator {
+		background-color: rgba(255,255,255,.5);
+	}
+
+	#navigator {
+		button {
+			color: rgba(0,0,0,.5);
+			background-color: rgba(255,255,255,.25);
+			border: none;
+		}
+
+		button:hover {
+			color: rgba(0,0,0,.85);
+			background-color: rgba(255,255,255,.5);
+		}
+
+		button:disabled {
+			color: rgba(0,0,0,.25);
+			background-color: rgba(255,255,255,.125);
+		}
+	}
+
+	#thumbnailHeader {
+		button {
+			color: rgba(0,0,0,1);
+			background-color: rgba(255,255,255,1);
+			// border-style: solid;
+			// border-width: 3rem;
+			// border-color: rgba(0,0,0,1);
+			border: none;
+			font-size: 1.5rem;
+		}
+
+		button:hover {
+			color: rgba(255,255,255,1);
+			background-color: rgba(0,0,0,.25);
+		}
+	}
+
+	p, ul, li {
+		// font-family: 'Volkhov', serif;
+		font-family: 'Vollkorn', serif;
+		font-size: 1.75rem;
+	}
+
+	#halaman1 p {
+		font-size: 1.75rem;
+	}
+
+	#halaman4 p {
+		font-size: 1.5rem;
+		text-indent: 3rem;
+	}
+
+	.carousel-caption {
+		top: 0;
+		bottom: auto;
+		background-color: rgba(0,0,0,.5);
+		#identitas {
+			// border-width: thin!important;
+			// font-size: 5rem;
+		}
+	}
+
+	#thumbnailContainer::-webkit-scrollbar {
+		width: 1em;
+	}
+
+	#thumbnailContainer::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+
+	#thumbnailContainer::-webkit-scrollbar-thumb {
+	  background-color: darkgrey;
+	  outline: 1px solid slategrey;
+	}
+
+	#thumbnailContainer {
+		overflow: scroll;
+	}
+
+	#thumbnailHeader {
+		// font-family: 'Open Sans', sans-serif;
+		font-family: 'Roboto', sans-serif;
+
+		// h3 {
+		// 	font-size: 1.25rem;
+		// }
+		//
+		// span {
+		// 	font-size: 1rem;
+		// }
+	}
+
+	.thumbnail-img {
+		transition: all .5s;
+		opacity: .6;
+	}
+
+	.thumbnail-wrapper {
+		overflow: hidden;
+
+		.thumbnail-text span {
+			// font-family: 'Volkhov', serif;
+			font-family: 'Vollkorn', serif;
+			font-size: 1.75rem;
+		}
+	}
+
+	.thumbnail-wrapper:hover .thumbnail-img,
+	.thumbnail-wrapper:active .thumbnail-img,
+	.thumbnail-wrapper:focus .thumbnail-img,
+	.thumbnail-wrapper:disabled .thumbnail-img {
+		transform: scale(1.125);
+		opacity: 1;
+	}
+
+	.thumbnail-wrapper .thumbnail-text {
+		display: none;
+	}
+
+	.thumbnail-wrapper:hover .thumbnail-text,
+	.thumbnail-wrapper:active .thumbnail-text,
+	.thumbnail-wrapper:focus .thumbnail-text,
+	.thumbnail-wrapper:disabled .thumbnail-text {
+		display: flex;
+	}
+}
