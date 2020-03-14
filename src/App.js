@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import $ from "jquery"
 import { FaTh, FaChevronLeft, FaChevronRight } from "react-icons/fa"
 import { MdClose } from "react-icons/md"
+import throttle from "lodash.throttle"
 import "./App.scss"
 
 const data = [
@@ -105,7 +106,7 @@ const CarouselItem = ({ id, title, desc, img, className }) => (
   </div>
 )
 
-const pageAfter = (pages, direction) => {
+const pageAfter = throttle((pages, direction) => {
 	switch (direction.type) {
 		case "prev":
 			return pages.current===initialPage ? pages.length-1 : pages.current - 1
@@ -114,7 +115,7 @@ const pageAfter = (pages, direction) => {
 		default:
 			return pages.current
 	}
-}
+}, 1000, {})
 
 const CarouselControl = ({ direction, read, onClick }) => (
 	<a className={`carousel-control-${direction}`} href="#carousel" role="button"
@@ -342,13 +343,13 @@ class App extends Component {
 									<FaTh />
 								</button>
 								<button id="prevBtn" className="rounded-circle px-2 pb-1 pt-0 ml-2 carousel-control-left"
-									onClick={()=>{document.querySelector("[data-slide='prev']").click()}}
+									onClick={throttle(()=>{document.querySelector("[data-slide='prev']").click()}, 1000, {})}
 									disabled={this.state.page.current===initialPage}
 								>
 									<FaChevronLeft />
 								</button>
 								<button id="nextBtn" className="rounded-circle px-2 pb-1 pt-0 ml-2"
-									onClick={()=>{document.querySelector("[data-slide='next']").click()}}
+									onClick={throttle(()=>{document.querySelector("[data-slide='next']").click()}, 1000, {})}
 									disabled={this.state.page.current===data.length-1}
 								>
 									<FaChevronRight />
