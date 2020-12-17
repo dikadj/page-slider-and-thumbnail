@@ -17,7 +17,7 @@ const data = [
 					<p>
 						Komunikasi Pemasaran dalam Jaringan: Survei Pengaruh Iklan
 						<em>Pop-up </em> “Semua Pasti Ada di Shopee” terhadap Perilaku
-						Penghindaran Konsumen Generasi Pasca-milenial (Generasi Z) di Yogyakarta
+						Penghindaran Konsumen Generasi Z di Yogyakarta
 					</p>
 				</div>
 				<div id="identitas" className="d-flex flex-row mt-5 ml-auto border"
@@ -32,7 +32,7 @@ const data = [
 				</div>
 			</div>
     ),
-    img: require("./img/definition.jpg")
+    img: require("./img/gen-z.jpg")
   },
   {
     id: 1,
@@ -74,6 +74,184 @@ const data = [
 			</p>
     ),
     img: require("./img/target.jpeg")
+  },
+  {
+    id: 4,
+    title: () => (
+      "Kerangka Teori."
+    ),
+    desc: () => (
+      <ol className="text-left">
+        <li>Mekanisme Pemasaran Online</li>
+        <li>Penghindaran Iklan</li>
+        <li>Model Penghindaran Iklan Cho & Cheon</li>
+        <li>Memprediksi Perilaku Konsumen Menggunakan Teori Perilaku Terencana</li>
+      </ol>
+    ),
+    img: require("./img/kerangka2.jpg")
+  },
+  {
+    id: 5,
+    title: () => (
+      "Kerangka Konsep."
+    ),
+    desc: () => (
+      <ol className="text-left">
+        <li>Alasan (<em>perceived goal impediment</em>, <em>perceived ad clutter</em>, dan <em>prior negative experience</em>)</li>
+        <li>Pertimbangan (<em>attitude toward behavior</em>, <em>subjective norm</em>, dan <em>perceived behavioral control</em>)</li>
+        <li>Pengaruh terhadap niat (kognitif, afektif, dan perilaku)</li>
+        <li>Niat berperilaku</li>
+        <li>Perilaku Penghindaran (kognitif, afektif, perilaku, kebiasaan)</li>
+      </ol>
+    ),
+    img: require("./img/concept.jpg")
+  },
+  {
+    id: 6,
+    title: () => (
+      <small><strong>Metodologi Penelitian.</strong></small>
+    ),
+    desc: () => (
+      <ol className="text-left">
+        <li>Pendekatan Penelitian Kuantitatif</li>
+        <li>Metode Penelitian Survei</li>
+        <li>Populasi dan Sampel</li>
+        <li>Teknik Pengumpulan Data Kuesioner dengan Pertanyaan Penilaian Berskala dan Pertanyaan Terbuka</li>
+        <li>Uji Reliabilitas dan Validitas</li>
+      </ol>
+    ),
+    img: require("./img/method.jpg")
+  },
+  {
+    id: 7,
+    title: () => (
+      "Kajian Pustaka."
+    ),
+    desc: () => (
+      <p>
+        Perkembangan teori perilaku terencana dan fenome penghindaran iklan dalam kaitannya dengan iklan <em>pop-up</em> dan generasi Z.
+      </p>
+    ),
+    img: require("./img/definition.jpg")
+  },
+  {
+    id: 8,
+    title: () => (
+      <small className="text-nowrap"><strong>Pengguna Shopee: Gen Z.</strong></small>
+    ),
+    desc: () => (
+      <ol className="text-left">
+        <li>Tentang gen Z</li>
+        <li>Latar belakang Shopee</li>
+      </ol>
+    ),
+    img: require("./img/profil.jpeg")
+  },
+  {
+    id: 9,
+    title: () => (
+      "Pembahasan."
+    ),
+    desc: () => (
+      <p>
+        Perilaku Penghindaran Pengguna Generasi Z di Yogyakarta terhadap Iklan <em>Pop-up</em> "Semua Pasti Ada di Shopee"
+      </p>
+    ),
+    img: require("./img/shopee-pasti-ada.jpg")
+  },
+  {
+    id: 10,
+    title: () => (
+      "Info Demografis."
+    ),
+    desc: () => (
+      <div className="text-left d-flex justify-content-between" style={{ lineHeight: 1 }}>
+        <div>
+          <p className="text-center">Jenis Kelamin</p>
+          <ul>
+            <li><small>Laki-laki: 61 (27,1%)</small></li>
+            <li><small>Perempuan: 164 (72,9%)</small></li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-center">Usia</p>
+          <ul>
+            <li><small>16 tahun: 25 (11,1%)</small></li>
+            <li><small>17 tahun: 17 (7,6%)</small></li>
+            <li><small>18 tahun: 17 (7,6%)</small></li>
+            <li><small>19 tahun: 48 (21,3%)</small></li>
+            <li><small>20 tahun: 31 (13,8%)</small></li>
+            <li><small>21 tahun: 22 (9,8%)</small></li>
+            <li><small>22 tahun: 38 (16,9%)</small></li>
+            <li><small>23 tahun: 27 (12%)</small></li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-center">Domisili</p>
+          <ul>
+            <li><small>Bantul: 82 (36,4%)</small></li>
+            <li><small>Gunung Kidul: 4 (1,8%)</small></li>
+            <li><small>Kulon Progo: 6 (2,7%)</small></li>
+            <li><small>Sleman: 102 (45,3%)</small></li>
+            <li><small>Yogyakarta: 31 (13,8%)</small></li>
+          </ul>
+        </div>
+      </div>
+    ),
+    img: require("./img/demografis.jpg")
+  },
+  {
+    id: 11,
+    title: () => (
+      "Awareness."
+    ),
+    desc: () => (
+      <ul className="text-left">
+        <li>Mengenal Shopee: 217/225 (96,4%)</li>
+        <li>Pernah melihat iklan <em>pop-up</em>: 215/225 (95,6%)</li>
+        <li>Pernah melihat iklan <em>pop-up</em> "Semua Pasti Ada di Shopee": 199/225 (88,4%)</li>
+      </ul>
+    ),
+    img: require("./img/awareness.webp")
+  },
+  {
+    id: 12,
+    title: () => (
+      <small><strong>Tingkat Penghindaran.</strong></small>
+    ),
+    desc: () => (
+      <ul className="text-left">
+        <li>Alasan</li>
+        <li>Pertimbangan</li>
+        <li>Pengaruh pada niat</li>
+        <li>Niat berperilaku</li>
+        <li>Perilaku penghindaran</li>
+        <li>Pengaruh lainnya</li>
+      </ul>
+    ),
+    img: require("./img/angry.jpg")
+  },
+  {
+    id: 13,
+    title: () => (
+      "Kesimpulan."
+    ),
+    desc: () => (
+      <p>
+        Iklan <em>pop-up</em> "Semua Pasti Ada di Shopee" telah terbukti memiliki pengaruh yang besar terhadap perilaku penghindaran generasi Z di Yogyakarta.
+      </p>
+    ),
+    img: require("./img/conclusion.jpg")
+  },
+  {
+    id: 14,
+    title: () => (
+      ""
+    ),
+    desc: () => (
+      ""
+    ),
+    img: require("./img/thankyou.jpg")
   }
 ]
 
@@ -94,7 +272,7 @@ const CarouselItem = ({ id, title, desc, img, className }) => (
 			width: "100vw",
 			height: "100vh"
 		}}/>
-		<div className="carousel-caption mt-5 p-5 h-75 d-block">
+		<div className={`carousel-caption mt-5 p-5 h-75 ${id+1!==data.length?"d-block":"d-none"}`}>
 			<h1 className="display-1 mb-3">{title()}</h1>
 			<svg className="mb-3" viewBox="0 0 600 2"
 				xmlns="http://www.w3.org/2000/svg">
