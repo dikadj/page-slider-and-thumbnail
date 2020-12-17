@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/page-slider-and-thumbnail/static/css/main.e070eacb.chunk.css",
+    "main.js": "/page-slider-and-thumbnail/static/js/main.0001e095.chunk.js",
+    "main.js.map": "/page-slider-and-thumbnail/static/js/main.0001e095.chunk.js.map",
+    "runtime-main.js": "/page-slider-and-thumbnail/static/js/runtime-main.287d9f4f.js",
+    "runtime-main.js.map": "/page-slider-and-thumbnail/static/js/runtime-main.287d9f4f.js.map",
+    "static/js/2.e8272949.chunk.js": "/page-slider-and-thumbnail/static/js/2.e8272949.chunk.js",
+    "static/js/2.e8272949.chunk.js.map": "/page-slider-and-thumbnail/static/js/2.e8272949.chunk.js.map",
+    "index.html": "/page-slider-and-thumbnail/index.html",
+    "precache-manifest.4968ff601f8ff71b9ed7f79070ad4146.js": "/page-slider-and-thumbnail/precache-manifest.4968ff601f8ff71b9ed7f79070ad4146.js",
+    "service-worker.js": "/page-slider-and-thumbnail/service-worker.js",
+    "static/css/main.e070eacb.chunk.css.map": "/page-slider-and-thumbnail/static/css/main.e070eacb.chunk.css.map",
+    "static/js/2.e8272949.chunk.js.LICENSE.txt": "/page-slider-and-thumbnail/static/js/2.e8272949.chunk.js.LICENSE.txt",
+    "static/media/angry.jpg": "/page-slider-and-thumbnail/static/media/angry.993a93fb.jpg",
+    "static/media/awareness.webp": "/page-slider-and-thumbnail/static/media/awareness.89e8ef97.webp",
+    "static/media/concept.jpg": "/page-slider-and-thumbnail/static/media/concept.a0d0e318.jpg",
+    "static/media/conclusion.jpg": "/page-slider-and-thumbnail/static/media/conclusion.5a5765e9.jpg",
+    "static/media/definition.jpg": "/page-slider-and-thumbnail/static/media/definition.e669f3ef.jpg",
+    "static/media/demografis.jpg": "/page-slider-and-thumbnail/static/media/demografis.d9495c5e.jpg",
+    "static/media/gen-z.jpg": "/page-slider-and-thumbnail/static/media/gen-z.8c907c44.jpg",
+    "static/media/kerangka2.jpg": "/page-slider-and-thumbnail/static/media/kerangka2.97118979.jpg",
+    "static/media/latar-belakang.jpg": "/page-slider-and-thumbnail/static/media/latar-belakang.59c624e6.jpg",
+    "static/media/method.jpg": "/page-slider-and-thumbnail/static/media/method.a5e43a01.jpg",
+    "static/media/profil.jpeg": "/page-slider-and-thumbnail/static/media/profil.98ada51e.jpeg",
+    "static/media/puzzles.jpg": "/page-slider-and-thumbnail/static/media/puzzles.8f26a8d4.jpg",
+    "static/media/shopee-pasti-ada.jpg": "/page-slider-and-thumbnail/static/media/shopee-pasti-ada.421adc7f.jpg",
+    "static/media/target.jpeg": "/page-slider-and-thumbnail/static/media/target.c6568c3b.jpeg",
+    "static/media/thankyou.jpg": "/page-slider-and-thumbnail/static/media/thankyou.50a88fd3.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.287d9f4f.js",
+    "static/js/2.e8272949.chunk.js",
+    "static/css/main.e070eacb.chunk.css",
+    "static/js/main.0001e095.chunk.js"
+  ]
+}
